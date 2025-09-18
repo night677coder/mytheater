@@ -2,8 +2,10 @@
 RewriteEngine On
 
 # Redirect all requests to index.html (for SPA support)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{login} ? $ index.html
+RewriteCond %{sign-up} ? $ index.html
+rewritecon %{home} ? $ index.html
+rewritecond %{template} ? $ index.html
 RewriteRule ^.*$ /index.html [L,QSA]
 
 # Security headers
@@ -22,4 +24,5 @@ RewriteRule ^.*$ /index.html [L,QSA]
 
 # Disable directory browsing
 Options -Indexes
+
 
