@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dexter - MyTheater</title>
+    <meta name="description" content="Watch Dexter TV show episodes on MyTheater's video player.">
+    <meta name="keywords" content="MyTheater, Dexter, TV show, streaming, crime, drama, mystery">
+    <meta name="author" content="MyTheater">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" href="image/movie camera icon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="newstyle.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" style="margin-right: 20px;">
+                <h1>MyTheater</h1>
+            </div>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" style="margin-left: 20px;">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#movie">Movie</a></li>
+                <li><a href="#tvshow">TV Show</a></li>
+                <li><a href="#Dubbed">Dubbed</a></li>
+                <li><a href="https://www.mytheaterr.blogspot.com" target="_blank">Blog</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="search-container" style="margin-left: 20px;">
+                <input type="text" id="searchInput" placeholder="Search movies...">
+                <button id="searchButton" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="tvshow-section">
+            <div class="tvshow-details">
+                <div class="poster-section">
+                    <img src="image/dexter.jpg" alt="Dexter Poster" class="poster">
+                    <div class="selectors">
+                        <select id="seasonSelect">
+                            <option value="1">Season 1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tvshow-info">
+                    <h2>Dexter</h2>
+                    <p><strong>Year:</strong> 2006-2013</p>
+                    <p><strong>Genre:</strong> Crime, Drama, Mystery</p>
+                    <p><strong>Summary:</strong> Dexter Morgan is a forensic blood spatter analyst for the Miami Metro Police Department who also leads a secret life as a serial killer, hunting down criminals who have slipped through the cracks of the justice system.</p>
+                </div>
+            </div>
+            <div class="tvshow-container">
+                <div class="video-player-container" style="margin-top: 20px;">
+                    <iframe id="videoPlayer" width="720" height="405" frameborder="0" allowfullscreen>
+                        Your browser does not support iframes.
+                    </iframe>
+                </div>
+                <div class="episode-list">
+                    <ul id="episodeList">
+                        <!-- Episodes will be populated here -->
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+      window.episodes = {
+        1: [
+          { name: 'Episode 1', url: 'https://comura.xyz/watch/?v41#UFNHbk00Q3lGTDZiVllvZXRYWDhocTd5LzdzWCtrTVR6ZlV3bGIzNGRQZmZheTE1cXFBM3pqdDVPWlVsV1lpR21mYz0' },
+          { name: 'Episode 2', url: 'https://comura.xyz/watch/?v42#U2JmR1RlMWgvMU4xYXlSMkE5SzVZaVcxUEc2dGVHMndIZEtzMWFFd2NQaXVKR0lnNUVBU3VmYjBLWHp4Y04xTlVKZz0' },
+          { name: 'Episode 3', url: 'https://comura.xyz/watch/?v23#TGdJM0h4RyszQVVxNS9MR3IxYVZlOS9YdStjbzUwMHVPRFFjaEd3NzRZcStYcFRzWWpmQk9jRERXRzdwamNsaEMyTT0' },
+          { name: 'Episode 4', url: 'https://comura.xyz/watch/?v24#bHpRSnN4SlRLUVZzM2pUMlJGVHhLcVI0UDBqTzVldEo3MUtUZnNTTnIvUHRJWjJ5aTI0Ky9wQlc4c1d2Y3h3MFBDOD0' },
+          { name: 'Episode 5', url: 'https://comura.xyz/watch/?v25#ZU94eHI1T0YzUU96SHBIcTJwc01kSTRQcHV1T3NTY1ZtVkVvbnU0OUxYcHAxVndhZ1VDckxtd0NYZ1hZaUxlWEQxQT0' },
+          { name: 'Episode 6', url: 'https://comura.xyz/watch/?v26#TGJBUkwwOVZUeVZNdDF5UVJ1QWFDSHV0SVdyZ1czV0kwK2E0cWkzOWZMWjhjQy9KL2c1djBUV1pZK05wTEIxbkY2Yz0' },
+          { name: 'Episode 7', url: 'https://comura.xyz/watch/?v27#a2Y1clNELzlvK3VjWUQrZ3J5WFpXTThrak9NZkh1ekNLYllhTitGenpwdWd1dDZhYVhldmd1RERkRlNvenc4WjVvcz0' },
+          { name: 'Episode 8', url: 'https://comura.xyz/watch/?v28#SEhndjRTT3k2eEN3UHEvbVhqcjJQSGhKQTlIWDlkZkhEc1U1b0hFMUtYK2R5cWZYS2dOQ0liSmdsN3dwTVVKSDd3az0' },
+          { name: 'Episode 9', url: 'https://comura.xyz/watch/?v29#UjM5c1V0Um5lTnlSK0JmWFRMOFp5RzY4UGQwMUpDR3VFbitROEV1NjhCeXRob2g2WHpvNGlOUkxCVnIvaE9wNmowQT0' },
+          { name: 'Episode 10', url: 'https://comura.xyz/watch/?v210#enUreFFIY081cVNVVkRoUG9XeXdtU1JlWWhXckF3bS96djFhcVVSY3FrcWExR0owNmtRU2p0dSs3clNvUVQzN1JBamo' },
+          { name: 'Episode 11', url: 'https://comura.xyz/watch/?v211#dTc0WjhTanlzTFYzQkFGMmtqRER1NjRmTU5EMkpJejVmbTQ1NHYrZGswQ3dneUZTalBFM0FMWktlWDNJcVlmUlNONms' },
+          { name: 'Episode 12', url: 'https://comura.xyz/watch/?v212#SnhjVnlYK05PcFhDckZOYVg4cG9mbzlMZXNQL2FDakV0Z0l1aVk3c3RYMnNCd2hYbXJxK1RIQkhFNU1jN0FPK3B4ZXU' }
+        ]
+      };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
